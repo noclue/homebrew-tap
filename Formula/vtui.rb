@@ -1,25 +1,25 @@
 class Vtui < Formula
   desc "Terminal UI for browsing VMware vSphere inventory"
   homepage "https://github.com/noclue/vtui"
-  version "0.2.5"
+  version "0.2.6"
   if OS.mac?
     if Hardware::CPU.arm?
-      url "https://github.com/noclue/vtui/releases/download/v0.2.5/vtui-aarch64-apple-darwin.tar.xz"
-      sha256 "883be30cf4f35f34e80c742db408833d874433963347061e257a41fa016801e2"
+      url "https://github.com/noclue/vtui/releases/download/v0.2.6/vtui-aarch64-apple-darwin.tar.xz"
+      sha256 "88ecc2fec071a7b4ea78149cb1b9804c5f4cc1293592298d788b1f9fb99b1cbd"
     end
     if Hardware::CPU.intel?
-      url "https://github.com/noclue/vtui/releases/download/v0.2.5/vtui-x86_64-apple-darwin.tar.xz"
-      sha256 "7655d450d44656467ef235cf9ec738061e6aad86acc7eb111eafe940b2b0e1fe"
+      url "https://github.com/noclue/vtui/releases/download/v0.2.6/vtui-x86_64-apple-darwin.tar.xz"
+      sha256 "0b7961d85bc0c3bf1755a6dde2e01397df09afe07b6cc83336967c5a13d2f6c9"
     end
   end
   if OS.linux?
     if Hardware::CPU.arm?
-      url "https://github.com/noclue/vtui/releases/download/v0.2.5/vtui-aarch64-unknown-linux-gnu.tar.xz"
-      sha256 "9106aaca4f081d24a899bc0e241a7f72b27eef10987eca8bc3892a8e0554481b"
+      url "https://github.com/noclue/vtui/releases/download/v0.2.6/vtui-aarch64-unknown-linux-gnu.tar.xz"
+      sha256 "2d0cd6c03c9bab893dca8e8364efcfb5c0a40d349fae5582251c5ef37256e23b"
     end
     if Hardware::CPU.intel?
-      url "https://github.com/noclue/vtui/releases/download/v0.2.5/vtui-x86_64-unknown-linux-gnu.tar.xz"
-      sha256 "a87a288783dab02cbaf7da224b0329d935353348961cb6a7df3127863ec459a7"
+      url "https://github.com/noclue/vtui/releases/download/v0.2.6/vtui-x86_64-unknown-linux-gnu.tar.xz"
+      sha256 "a4e1f31599c610bd362a220252b2e0be947c64701afec94aabb6439c1dadcca9"
     end
   end
   license "Apache-2.0"
