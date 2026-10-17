@@ -1,25 +1,25 @@
 class Vtui < Formula
   desc "Terminal UI for browsing VMware vSphere inventory"
   homepage "https://github.com/noclue/vtui"
-  version "0.2.7"
+  version "0.2.8"
   if OS.mac?
     if Hardware::CPU.arm?
-      url "https://github.com/noclue/vtui/releases/download/v0.2.7/vtui-aarch64-apple-darwin.tar.xz"
-      sha256 "f12fdbf0309ac0b04105a9c36b9de99a430128f2bdf8f38be6d119aa408d6837"
+      url "https://github.com/noclue/vtui/releases/download/v0.2.8/vtui-aarch64-apple-darwin.tar.xz"
+      sha256 "6fdd188ddb4300556018262868d392ac9737954b4eece7fd96cbd2c44edb840b"
     end
     if Hardware::CPU.intel?
-      url "https://github.com/noclue/vtui/releases/download/v0.2.7/vtui-x86_64-apple-darwin.tar.xz"
-      sha256 "8d5d9e3585a95f35ec4252c2150e1d5ba67b52d7b54a333e9c04694ec9baea58"
+      url "https://github.com/noclue/vtui/releases/download/v0.2.8/vtui-x86_64-apple-darwin.tar.xz"
+      sha256 "1da3bc85f398c48fc7011e5a53b589feac7c5fccceec561907318f9498617cb1"
     end
   end
   if OS.linux?
     if Hardware::CPU.arm?
-      url "https://github.com/noclue/vtui/releases/download/v0.2.7/vtui-aarch64-unknown-linux-gnu.tar.xz"
-      sha256 "d50c8e13bd0e8fd4d135b9cb0ced015e7c82d2f9427a4417c7b4c8d58842677c"
+      url "https://github.com/noclue/vtui/releases/download/v0.2.8/vtui-aarch64-unknown-linux-gnu.tar.xz"
+      sha256 "b45d0fe240a1fbb1c2c8cf66cc21ff80e72dffa71aafec01232203d298d68467"
     end
     if Hardware::CPU.intel?
-      url "https://github.com/noclue/vtui/releases/download/v0.2.7/vtui-x86_64-unknown-linux-gnu.tar.xz"
-      sha256 "32b9bdc8420c0cf17dfac4c16fbb17f5dcbd8e419fe255d74f5cbff8a30be1ae"
+      url "https://github.com/noclue/vtui/releases/download/v0.2.8/vtui-x86_64-unknown-linux-gnu.tar.xz"
+      sha256 "d32b850b3fc7de666c328a9fdeb6a5d315c2f024bbe7c1219b58da50ec5db880"
     end
   end
   license "Apache-2.0"
@@ -49,10 +49,18 @@ class Vtui < Formula
   end
 
   def install
-    bin.install "vtui" if OS.mac? && Hardware::CPU.arm?
-    bin.install "vtui" if OS.mac? && Hardware::CPU.intel?
-    bin.install "vtui" if OS.linux? && Hardware::CPU.arm?
-    bin.install "vtui" if OS.linux? && Hardware::CPU.intel?
+    if OS.mac? && Hardware::CPU.arm?
+      bin.install "vtui"
+    end
+    if OS.mac? && Hardware::CPU.intel?
+      bin.install "vtui"
+    end
+    if OS.linux? && Hardware::CPU.arm?
+      bin.install "vtui"
+    end
+    if OS.linux? && Hardware::CPU.intel?
+      bin.install "vtui"
+    end
 
     install_binary_aliases!
 
